@@ -1,11 +1,8 @@
 from enum import Enum
-from typing import Tuple
 import numpy as np
 import scipy.misc as smp
 import matplotlib.pyplot as plt
 from drawnow import drawnow
-
-fig = plt.figure()
 
 #  LRTA
 class LiveMazeAgent(object):
@@ -15,7 +12,7 @@ class LiveMazeAgent(object):
         WEST = (-1, 0)
         EAST = (1, 0)
 
-    def __init__(self, pos: Tuple[int], maze: Tuple[Tuple[int]], goal: Tuple[int]):
+    def __init__(self, pos, maze, goal):
         self.pos = pos
         self.maze = maze
         self.goal = goal
@@ -88,7 +85,6 @@ class LiveMazeAgent(object):
         mazeImage = mazeImage.resize((200, 200))
         plt.axis('off')
         plt.imshow(mazeImage)
-
 
 
 if __name__ == "__main__":
